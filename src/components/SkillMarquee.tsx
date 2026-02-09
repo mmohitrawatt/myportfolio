@@ -20,7 +20,7 @@ export default function SkillMarquee({ items }: { items: string[] }) {
                     x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 30,
+                        duration: 50,
                         ease: "linear",
                     },
                 }}
@@ -28,7 +28,7 @@ export default function SkillMarquee({ items }: { items: string[] }) {
                 {duplicatedItems.map((item, idx) => (
                     <span
                         key={idx}
-                        className="text-4xl md:text-6xl font-black text-zinc-500 hover:text-white transition-colors uppercase tracking-widest flex items-center gap-4"
+                        className="text-3xl md:text-5xl lg:text-6xl font-black text-zinc-500 hover:text-white transition-colors uppercase tracking-widest flex items-center gap-4"
                     >
                         <span className="w-2 h-2 rounded-full bg-red-600" />
                         {item}

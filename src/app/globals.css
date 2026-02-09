@@ -24,8 +24,11 @@
   src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 }
 
-* {
-  cursor: none !important;
+/* Only hide cursor on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 body {
@@ -95,7 +98,13 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
 }
 
 ::-webkit-scrollbar-track {
