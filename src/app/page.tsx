@@ -188,7 +188,7 @@ export default function Home() {
   const skills = ["Figma", "Adobe Suite", "After Effects", "Midjourney", "Principle", "User Research", "Wireframing", "Prototyping", "Interaction Design", "Motion"];
 
   return (
-    <main className="relative min-h-screen bg-black text-white selection:bg-red-600/30 overflow-x-hidden pb-20 md:pb-32">
+    <main className="relative min-h-screen bg-black text-white selection:bg-red-600/30 overflow-x-hidden pb-20 md:pb-32 bg-mesh animate-gradient">
       <CustomCursor />
       <MobileNav />
       <ScrollProgress />
@@ -207,9 +207,9 @@ export default function Home() {
       />
 
       {/* Navigation */}
-      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] md:w-[90%] max-w-2xl px-4 md:px-6 py-2 md:py-3 glass rounded-full flex justify-between items-center border border-white/10 shadow-2xl shadow-black">
+      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] md:w-[90%] max-w-2xl px-6 md:px-6 py-3 md:py-3 glass rounded-full flex justify-between items-center border border-white/[0.08] md:border-white/10 shadow-2xl shadow-black backdrop-blur-xl">
         <MagneticWrapper>
-          <div className="font-outfit font-black tracking-tighter text-lg bg-white text-black px-2 rounded cursor-pointer">MR.</div>
+          <div className="font-outfit font-black tracking-tighter text-lg md:text-lg bg-white text-black px-3 py-1 rounded cursor-pointer active:scale-95 transition-transform">MR.</div>
         </MagneticWrapper>
         <div className="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
           <Link href="#about" className="hover:text-red-500 transition-colors">About</Link>
@@ -220,7 +220,7 @@ export default function Home() {
           <Link
             href="mailto:mohitrawat0079@gmail.com"
             onMouseEnter={() => { sounds.blip(); logToConsole("SECURITY_ENCRYPTED_MAIL_LINK: active", "info"); }}
-            className="bg-red-600 text-white text-[10px] font-bold px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all uppercase tracking-wider block"
+            className="bg-red-600 text-white text-[11px] md:text-[10px] font-bold px-6 py-3 md:px-4 md:py-2 rounded-full hover:bg-white hover:text-black active:scale-95 transition-all uppercase tracking-wider block min-h-[48px] md:min-h-0 flex items-center justify-center"
           >
             Contact
           </Link>
@@ -232,15 +232,15 @@ export default function Home() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20"
+        className="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-32 md:pb-20"
       >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[80px] md:auto-rows-[120px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[120px]">
 
           {/* Hero Section - Main Intro */}
-          <motion.div variants={itemVariants} className="md:col-span-8 md:row-span-4 perspective-1000">
+          <motion.div variants={itemVariants} className="md:col-span-8 md:row-span-4 perspective-1000 min-h-[500px] md:min-h-0">
             <TiltCard className="h-full">
               <motion.section id="about"
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 lg:p-12 flex flex-col justify-end relative overflow-hidden group border border-white/5 shimmer"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 lg:p-12 flex flex-col justify-end relative overflow-hidden group border border-white/10 shimmer backdrop-blur-2xl"
                 onViewportEnter={() => logToConsole("ACTIVE_STATUS: Online", "success")}
               >
                 <div className="spotlight-border" />
@@ -267,20 +267,20 @@ export default function Home() {
                   <CharacterReveal
                     text="DESIGNING"
                     glitch={true}
-                    className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black italic tracking-tighter leading-[0.85] mb-1 md:mb-2"
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black italic tracking-tighter leading-[0.9] md:leading-[0.85] mb-1 md:mb-2 text-neon-cyan"
                   />
                   <CharacterReveal
                     text="THE ELITE"
                     glitch={true}
-                    className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black italic tracking-tighter leading-[0.85] mb-1 md:mb-2"
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black italic tracking-tighter leading-[0.9] md:leading-[0.85] mb-1 md:mb-2 text-white"
                   />
                   <CharacterReveal
                     text="FUTURE."
                     glitch={true}
-                    className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black italic tracking-tighter text-gradient leading-[0.85] mb-4 md:mb-8"
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black italic tracking-tighter text-gradient leading-[0.9] md:leading-[0.85] mb-6 md:mb-8 text-neon-magenta"
                   />
-                  <p className="text-sm md:text-lg lg:text-xl text-zinc-400 font-medium max-w-xl leading-snug">
-                    I am <span className="text-white font-bold text-base md:text-xl uppercase italic">Mohit Rawat</span>. A self-taught <span className="text-red-500 font-bold underline decoration-red-600/30 underline-offset-4">Product Designer</span> with 9 months hands-on experience in building data-driven digital solutions.
+                  <p className="text-lg md:text-xl lg:text-2xl text-zinc-300 md:text-zinc-400 font-medium max-w-xl leading-relaxed">
+                    I am <span className="text-white font-black text-xl md:text-2xl uppercase italic underline decoration-red-600 decoration-4 underline-offset-8">Mohit Rawat</span>. A self-taught <span className="text-red-500 font-black">Product Designer</span> crafting the next-gen digital experiences.
                   </p>
                 </div>
               </motion.section>
@@ -288,9 +288,9 @@ export default function Home() {
           </motion.div>
 
           {/* Profile Photo Card */}
-          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000">
+          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000 min-h-[400px] md:min-h-0">
             <TiltCard className="h-full">
-              <div className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-2 overflow-hidden border border-white/5 group relative bg-gradient-to-br from-red-950/20 to-transparent flex flex-col">
+              <div className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-3 overflow-hidden border-2 border-white/20 group relative neon-border animate-float">
                 <div className="spotlight-border" />
                 <div className="w-full h-full rounded-[2rem] bg-zinc-900/50 border border-white/5 overflow-hidden relative flex items-center justify-center flex-1">
                   <motion.div
@@ -321,10 +321,10 @@ export default function Home() {
           </motion.div>
 
           {/* Core Process Card */}
-          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000">
+          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000 min-h-[400px] md:min-h-0">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 border border-white/5 flex flex-col group overflow-hidden bg-red-950/10 shimmer"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 border-2 border-white/20 flex flex-col group overflow-hidden bg-red-950/20 backdrop-blur-2xl neon-border animate-float"
                 onViewportEnter={() => logToConsole("MODULE_LOAD: Operational_Logic.dll", "info")}
               >
                 <div className="spotlight-border" />
@@ -346,7 +346,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-widest">01 / Research</h4>
-                      <p className="text-[10px] text-zinc-500 mt-1">Analyzing user pain points and market gaps.</p>
+                      <p className="text-[11px] md:text-[10px] text-zinc-400 md:text-zinc-500 mt-1">Analyzing user pain points and market gaps.</p>
                     </div>
                   </motion.div>
                   <motion.div
@@ -359,7 +359,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-widest">02 / Design</h4>
-                      <p className="text-[10px] text-zinc-500 mt-1">Wireframing and high-fidelity prototyping.</p>
+                      <p className="text-[11px] md:text-[10px] text-zinc-400 md:text-zinc-500 mt-1">Wireframing and high-fidelity prototyping.</p>
                     </div>
                   </motion.div>
                   <motion.div
@@ -372,7 +372,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-widest">03 / Deploy</h4>
-                      <p className="text-[10px] text-zinc-500 mt-1">Developer handoff and quality assurance.</p>
+                      <p className="text-[11px] md:text-[10px] text-zinc-400 md:text-zinc-500 mt-1">Developer handoff and quality assurance.</p>
                     </div>
                   </motion.div>
                 </div>
@@ -384,7 +384,7 @@ export default function Home() {
           </motion.div>
 
           {/* Availability Status */}
-          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-2 glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 flex flex-col justify-center text-center space-y-3 md:space-y-4 border border-white/5 bg-zinc-950/20">
+          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-2 glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center text-center space-y-4 border-2 border-white/20 bg-zinc-950/40 backdrop-blur-3xl min-h-[250px] md:min-h-0 relative overflow-hidden group shadow-[0_0_30px_rgba(34,197,94,0.1)]">
             <div className="spotlight-border" />
             <motion.div
               className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-500 text-[9px] font-black uppercase tracking-[0.2em] border border-green-500/20 mx-auto relative z-10"
@@ -402,11 +402,11 @@ export default function Home() {
             </motion.div>
             <CharacterReveal
               text="LET'S SOLVE"
-              className="text-xl md:text-2xl font-black tracking-tight leading-tight uppercase justify-center italic"
+              className="text-2xl md:text-3xl font-black tracking-tight leading-tight uppercase justify-center italic text-neon-cyan"
             />
             <CharacterReveal
               text="YOUR PROBLEM."
-              className="text-xl md:text-2xl font-black tracking-tight leading-tight uppercase justify-center italic"
+              className="text-2xl md:text-3xl font-black tracking-tight leading-tight uppercase justify-center italic text-neon-magenta"
             />
           </motion.div>
 
@@ -428,7 +428,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 border border-white/5 flex flex-col group"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 border-2 border-white/20 flex flex-col group backdrop-blur-2xl relative overflow-hidden"
                 onViewportEnter={() => logToConsole("MODULE_LOAD: Service_Record.dll", "info")}
               >
                 <div className="spotlight-border" />
@@ -471,7 +471,7 @@ export default function Home() {
           {/* Stats/Achievements */}
           <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000">
             <TiltCard className="h-full">
-              <div className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-8 border border-white/5 flex flex-col relative overflow-hidden group bg-gradient-to-br from-red-950/10 to-transparent shimmer">
+              <div className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 border-2 border-white/20 flex flex-col relative overflow-hidden group bg-gradient-to-br from-red-950/30 to-black backdrop-blur-2xl">
                 <div className="spotlight-border" />
                 <div className="relative z-10 flex-1 flex flex-col justify-between">
                   <div>
@@ -527,7 +527,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="md:col-span-12 md:row-span-3 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[2rem] md:rounded-[3.5rem] p-6 md:p-10 lg:p-12 border border-white/5 relative overflow-hidden group shimmer"
+                className="h-full glass-vibrant rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-10 lg:p-12 border-2 border-white/20 relative overflow-hidden group backdrop-blur-3xl neon-border animate-float"
                 onViewportEnter={() => logToConsole("INIT_SUBSYSTEM: Core_Services", "success")}
               >
                 <div className="spotlight-border" />
@@ -601,7 +601,7 @@ export default function Home() {
           <motion.div variants={itemVariants} id="projects" className="md:col-span-8 md:row-span-4 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[3rem] p-2 overflow-hidden border border-white/5 group bg-zinc-950/20 shimmer"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[3rem] p-4 overflow-hidden border-2 border-white/20 group backdrop-blur-3xl relative overflow-hidden group shadow-[0_0_50px_rgba(255,0,0,0.15)] animate-float"
                 onViewportEnter={() => logToConsole("DATA_FOUND: Project_DOCQUE_Active", "warning")}
               >
                 <div className="spotlight-border" />
@@ -619,7 +619,7 @@ export default function Home() {
                       </div>
                       <CharacterReveal
                         text="MORAXE"
-                        className="text-4xl md:text-6xl font-black mb-3 md:mb-4 tracking-tighter italic"
+                        className="text-5xl md:text-7xl font-black mb-4 md:mb-6 tracking-tighter italic text-neon-cyan"
                       />
                       <p className="text-zinc-400 text-xs md:text-sm leading-relaxed max-w-xs font-sans font-medium">
                         Mobile-first social platform for entrepreneurs. Designed mini-video interactions and branding assets.
@@ -654,14 +654,14 @@ export default function Home() {
           <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-4 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 overflow-hidden relative group border border-white/5 bg-gradient-to-br from-transparent to-red-950/10"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 md:p-10 overflow-hidden relative group border-2 border-white/20 bg-gradient-to-br from-black to-red-950/40 backdrop-blur-3xl shadow-[inset_0_0_30px_rgba(255,0,0,0.05)]"
                 onViewportEnter={() => logToConsole("PHILOSOPHY_LOADED: Empathy_&_Data", "info")}
               >
                 <div className="spotlight-border" />
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
-                    <Quote className="w-8 h-8 text-red-600 mb-6 opacity-40" />
-                    <h3 className="text-2xl md:text-3xl font-black italic mb-4 md:mb-6 leading-tight">"Practical design for visually appealing solutions."</h3>
+                    <Quote className="w-10 h-10 text-red-600 mb-8 opacity-60" />
+                    <h3 className="text-3xl md:text-4xl font-black italic mb-6 md:mb-8 leading-[0.9] text-white tracking-tighter">"Practical design for visually appealing solutions."</h3>
                   </div>
                   <div className="space-y-6">
                     <div className="space-y-2">
@@ -700,7 +700,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="md:col-span-6 md:row-span-3 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 overflow-hidden relative group border border-white/5 hover:bg-zinc-950/40"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 md:p-10 overflow-hidden relative group border-2 border-white/20 hover:bg-zinc-950/60 transition-all shadow-[0_0_40px_rgba(255,0,0,0.1)] animate-float"
                 onViewportEnter={() => logToConsole("DATA_FOUND: Project_ZAPPY_Active", "success")}
               >
                 <div className="spotlight-border" />
@@ -716,7 +716,7 @@ export default function Home() {
                     </div>
                     <CharacterReveal
                       text="ZAPPY"
-                      className="text-3xl md:text-4xl font-black mb-2 md:mb-3 italic"
+                      className="text-4xl md:text-5xl font-black mb-3 md:mb-4 italic text-neon-magenta"
                     />
                     <p className="text-xs md:text-sm text-zinc-400 leading-relaxed max-w-xs font-sans font-medium">
                       On-demand home services offering 10-minute delivery promise. Clickable prototype with 15+ high-fidelity screens.
@@ -737,7 +737,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="md:col-span-6 md:row-span-3 perspective-1000">
             <TiltCard className="h-full">
               <motion.section
-                className="h-full glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 overflow-hidden relative group border border-white/5 hover:bg-zinc-950/40"
+                className="h-full glass-vibrant rounded-[1.5rem] md:rounded-[2.5rem] p-8 md:p-10 overflow-hidden relative group border-2 border-white/20 hover:bg-zinc-950/60 transition-all shadow-[0_0_40px_rgba(0,255,255,0.1)] animate-float"
                 onViewportEnter={() => logToConsole("DATA_FOUND: Project_DOCQUE_Active", "info")}
               >
                 <div className="spotlight-border" />
@@ -753,7 +753,7 @@ export default function Home() {
                     </div>
                     <CharacterReveal
                       text="DOCQUE"
-                      className="text-3xl md:text-4xl font-black mb-2 md:mb-3 italic"
+                      className="text-4xl md:text-5xl font-black mb-3 md:mb-4 italic text-neon-cyan"
                     />
                     <p className="text-xs md:text-sm text-zinc-400 leading-relaxed max-w-xs font-sans font-medium">
                       Modern healthcare platform streamlining patient interactions with a premium AI-driven interface.
@@ -782,7 +782,7 @@ export default function Home() {
                 <h3 className="text-[10px] font-black uppercase tracking-[0.3em] opacity-40 mb-2">Technical Core</h3>
                 <CharacterReveal
                   text="THE ARSENAL"
-                  className="text-3xl md:text-5xl lg:text-6xl font-black italic tracking-tighter uppercase"
+                  className="text-4xl md:text-6xl lg:text-7xl font-black italic tracking-tighter uppercase text-neon-magenta"
                 />
               </div>
               <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-20 hidden md:block">Infinite Drift Layer</span>
@@ -793,7 +793,7 @@ export default function Home() {
           {/* Contact - Final Card */}
           <motion.footer
             variants={itemVariants}
-            className="md:col-span-12 md:row-span-4 glass-card rounded-[2rem] md:rounded-[4rem] p-8 md:p-12 lg:p-16 text-center flex flex-col items-center justify-center space-y-6 md:space-y-10 mt-10 border border-white/5 bg-gradient-to-b from-transparent to-zinc-950/40 relative group"
+            className="md:col-span-12 md:row-span-4 glass-vibrant rounded-[2.5rem] md:rounded-[4rem] p-10 md:p-12 lg:p-16 text-center flex flex-col items-center justify-center space-y-8 md:space-y-12 mt-10 border-2 border-white/20 bg-gradient-to-b from-transparent to-red-950/60 relative group backdrop-blur-3xl neon-border"
             onViewportEnter={() => logToConsole("SECURITY_ENCRYPTED_COMMS: online", "success")}
           >
             <div className="spotlight-border" />
@@ -813,7 +813,7 @@ export default function Home() {
               </motion.span>
               <CharacterReveal
                 text="READY TO DEPLOY."
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-9xl font-black tracking-tighter text-gradient leading-[0.85] text-center justify-center italic"
+                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-neon-cyan leading-[0.85] text-center justify-center italic"
               />
             </div>
 
